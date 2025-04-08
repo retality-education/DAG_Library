@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DAG_Library")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bc25635697cdc17999132a72b15bcce486b7df7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DAG_Library")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DAG_Library")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "MyCustomCollections/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MyCustomCollections.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyCustomCollections.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MyCustomCollections/1.0.0": {
+      "type": "project",
+      "path": "../MyCustomCollections/MyCustomCollections.csproj",
+      "msbuildProject": "../MyCustomCollections/MyCustomCollections.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "MyCustomCollections >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Acern\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Acern\\OneDrive\\Рабочий стол\\VSU_edu\\3rd_semester\\structures_and_algorithms_c++\\MyCustomCollections\\MyCustomCollections.csproj": {
+              "projectPath": "C:\\Users\\Acern\\OneDrive\\Рабочий стол\\VSU_edu\\3rd_semester\\structures_and_algorithms_c++\\MyCustomCollections\\MyCustomCollections.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

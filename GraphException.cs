@@ -6,50 +6,42 @@ using System.Threading.Tasks;
 
 namespace DAG_Library
 {
-    public class GraphException : Exception
+    public static class GraphExceptions
     {
-        public GraphException(string message) : base(message) { }
-    }
-
-    public class CyclicGraphException : GraphException
-    {
-        public CyclicGraphException() : base("Adding this link would create a cycle in the graph") { }
-    }
-
-    public class NodeNotFoundException<N> : GraphException
-    {
-        public N Node { get; }
-
-        public NodeNotFoundException(N node)
-            : base($"Node {node} not found in graph")
+        public class NodeNotFoundException<T> : Exception
         {
-            Node = node;
+            public NodeNotFoundException(T node)
+                : base($"Node '{node}' not found in the graph.") { }
         }
-    }
 
-    public class LinkAlreadyExistsException<N> : GraphException
-    {
-        public N From { get; }
-        public N To { get; }
-
-        public LinkAlreadyExistsException(N from, N to)
-            : base($"Link from {from} to {to} already exists")
+        public class LinkNotFoundException<T> : Exception
         {
-            From = from;
-            To = to;
+            public LinkNotFoundException(T from, T to)
+                : base($"Link from '{from}' to '{to}' not found in the graph.") { }
         }
-    }
 
-    public class LinkNotFoundException<N> : GraphException
-    {
-        public N From { get; }
-        public N To { get; }
-
-        public LinkNotFoundException(N from, N to)
-            : base($"Link from {from} to {to} not found")
+        public class LinkAlreadyExistsException<T> : Exception
         {
-            From = from;
-            To = to;
+            public LinkAlreadyExistsException(T from, T to)
+                : base($"Link from '{from}' to '{to}' already exists.") { }
+        }
+
+        public class NodeAlreadyExistsException<T> : Exception
+        {
+            public NodeAlreadyExistsException(T value)
+                : base($"Node with value '{value}' already exists.") { }
+        }
+
+        public class CycleDetectedException : Exception
+        {
+            public CycleDetectedException()
+                : base("Graph contains a cycle.") { }
+        }
+
+        public class ImmutableGraphModificationException : Exception
+        {
+            public ImmutableGraphModificationException()
+                : base("Cannot modify an immutable graph.") { }
         }
     }
 }
