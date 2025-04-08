@@ -1,0 +1,11 @@
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\bin\Debug\net8.0\DAG_Library.deps.json
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\bin\Debug\net8.0\DAG_Library.dll
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\bin\Debug\net8.0\DAG_Library.pdb
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\DAG_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\DAG_Library.AssemblyInfoInputs.cache
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\DAG_Library.AssemblyInfo.cs
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\DAG_Library.csproj.CoreCompileInputs.cache
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\DAG_Library.dll
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\refint\DAG_Library.dll
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\DAG_Library.pdb
+C:\Users\Acern\OneDrive\Рабочий стол\VSU_edu\3rd_semester\structures_and_algorithms_c++\DAG_Library\obj\Debug\net8.0\ref\DAG_Library.dll
