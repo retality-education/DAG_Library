@@ -11,8 +11,13 @@ namespace DAG_Library
         where LINK : IComparable
     {
         // Делегаты для операций с графами
-        public delegate bool CheckDelegate<N, L>(N node, L link);
-        public delegate void ActionDelegate<N, L>(N node, L link);
+        public delegate bool CheckDelegate<N, L>(Edge<N, L> edge)
+            where N : IComparable
+            where L : IComparable;
+        public delegate void ActionDelegate<N, L>(Edge<N, L> edge)
+            where N : IComparable
+            where L : IComparable;
+
         public delegate IGraph<N, L> GraphConstructor<N, L>(int capacity)
             where N : IComparable
             where L : IComparable;
@@ -29,7 +34,7 @@ namespace DAG_Library
             where L : IComparable
         {
             foreach (var edge in graph.Edges)
-                if (check(edge.From, edge.LinkValue))
+                if (check(edge))
                     return true;
             return false;
         }
@@ -45,10 +50,10 @@ namespace DAG_Library
         {
             var result = constructor(graph.Count);
             foreach (var node in graph.Nodes)
-                result.AddNode(node);
+                result.AddNode(node.Value);
 
             foreach (var edge in graph.Edges)
-                if (check(edge.From, edge.LinkValue))
+                if (check(edge))
                     result.AddEdge(edge.From, edge.To, edge.LinkValue);
 
             return result;
@@ -60,7 +65,7 @@ namespace DAG_Library
             where L : IComparable
         {
             foreach (var edge in graph.Edges)
-                action(edge.From, edge.LinkValue);
+                action(edge);
         }
 
         /// <summary>Проверяет, что все ребра удовлетворяют условию</summary>
@@ -69,7 +74,7 @@ namespace DAG_Library
             where L : IComparable
         {
             foreach (var edge in graph.Edges)
-                if (!check(edge.From, edge.LinkValue))
+                if (!check(edge))
                     return false;
             return true;
         }
@@ -124,7 +129,7 @@ namespace DAG_Library
             where N : IComparable
             where L : IComparable
         {
-            var nodes = graph.Nodes.ToArray();
+            var nodes = graph.Nodes.Select(x => x.Value).ToArray();
             var distances = new int[nodes.Length];
             Array.Fill(distances, -1);
 
@@ -166,9 +171,9 @@ namespace DAG_Library
 
             foreach (var node in graph.Nodes)
             {
-                if (!Contains(visited, node))
+                if (!Contains(visited, node.Value))
                 {
-                    TopSortUtil(node, graph, visited, result);
+                    TopSortUtil(node.Value, graph, visited, result);
                 }
             }
             return result;

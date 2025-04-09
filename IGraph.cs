@@ -1,7 +1,7 @@
 ﻿namespace DAG_Library
 {
     // Базовый интерфейс для графов
-    public interface IGraph<N, L> : IEnumerable<N>
+    public interface IGraph<N, L> : IEnumerable<Vertex<N, L>>
         where N : IComparable
         where L : IComparable
     {
@@ -14,7 +14,7 @@
 
         int Count { get; }
         bool IsEmpty { get; }
-        IEnumerable<N> Nodes { get; }
-        IEnumerable<Edge<L, N>> Edges { get; }
+        IEnumerable<Vertex<N, L>> Nodes { get; }
+        IEnumerable<Edge<N, L>> Edges { get; }
     }
 }

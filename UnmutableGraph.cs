@@ -20,8 +20,8 @@ namespace DAG_Library
 
         public int Count => _originalGraph.Count;
         public bool IsEmpty => _originalGraph.IsEmpty;
-        public IEnumerable<N> Nodes => _originalGraph.Nodes;
-        public IEnumerable<Edge<L, N>> Edges => _originalGraph.Edges;
+        public IEnumerable<Vertex<N, L>> Nodes => _originalGraph.Nodes;
+        public IEnumerable<Edge<N, L>> Edges => _originalGraph.Edges;
 
         public void AddNode(N node)
             => throw new GraphExceptions.ImmutableGraphModificationException();
@@ -40,7 +40,7 @@ namespace DAG_Library
 
         public bool Contains(N node) => _originalGraph.Contains(node);
 
-        public IEnumerator<N> GetEnumerator() => _originalGraph.GetEnumerator();
+        public IEnumerator<Vertex<N, L>> GetEnumerator() => _originalGraph.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

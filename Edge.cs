@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace DAG_Library
 {
-    public struct Edge<L, N> where N : IComparable where L : IComparable
+    public struct Edge<N, L> where N : IComparable where L : IComparable
     {
-        public N From { get; }
-        public L LinkValue { get; }
+        public N From { get;}
+        public L LinkValue { get; set; }
         public N To { get; }
 
         public Edge(N from, L linkValue, N to)

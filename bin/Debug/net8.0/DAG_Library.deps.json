@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "DAG_Library/1.0.0": {
+        "dependencies": {
+          "MyCustomCollections": "1.0.0"
+        },
         "runtime": {
           "DAG_Library.dll": {}
+        }
+      },
+      "MyCustomCollections/1.0.0": {
+        "runtime": {
+          "MyCustomCollections.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "DAG_Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyCustomCollections/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

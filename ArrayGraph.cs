@@ -23,16 +23,16 @@ namespace DAG_Library
         public int Count => count;
         public bool IsEmpty => count == 0;
 
-        public IEnumerable<N> Nodes
+        public IEnumerable<Vertex<N, L>> Nodes
         {
             get
             {
                 for (int i = 0; i < count; i++)
-                    yield return vertices[i].Value;
+                    yield return vertices[i];
             }
         }
 
-        public IEnumerable<Edge<L, N>> Edges
+        public IEnumerable<Edge<N, L>> Edges
         {
             get
             {
@@ -66,7 +66,7 @@ namespace DAG_Library
             if (edgeExists)
                 throw new GraphExceptions.LinkAlreadyExistsException<N>(from, to);
 
-            var newEdge = new Edge<L, N>(from, link, to);
+            var newEdge = new Edge<N, L>(from, link, to);
             source.OutgoingEdges.AddLast(newEdge);
 
             // Проверка на циклы
@@ -97,7 +97,7 @@ namespace DAG_Library
                 do
                 {
                     removed = vertices[i].OutgoingEdges.Remove(
-                        default(Edge<L, N>),
+                        default(Edge<N, L>),
                         (edge, _) => edge.To.CompareTo(value) == 0
                     );
                 } while (removed);
@@ -116,7 +116,7 @@ namespace DAG_Library
             _ = FindVertex(to) ?? throw new GraphExceptions.NodeNotFoundException<N>(to);
 
             bool removed = source.OutgoingEdges.Remove(
-                default(Edge<L, N>),
+                default(Edge<N, L>),
                 (edge, _) => edge.To.CompareTo(to) == 0
             );
 
@@ -146,7 +146,7 @@ namespace DAG_Library
             return -1;
         }
 
-        public IEnumerator<N> GetEnumerator() => Nodes.GetEnumerator();
+        public IEnumerator<Vertex<N, L>> GetEnumerator() => Nodes.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }   
 }
